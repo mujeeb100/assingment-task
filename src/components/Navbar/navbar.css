@@ -10,6 +10,7 @@
 img {
   height: 28px;
   object-fit: contain;
+  margin: auto;
 }
 .Checkout-button {
   width: 500px;

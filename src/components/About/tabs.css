@@ -1,0 +1,11 @@
+/*  */
+.nav-tabs .nav-link {
+  border: none;
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom: 2px solid #007bff; /* add a bottom border to the active tab if desired */
+}
+.nav-tabs .nav-link.active {
+  border: none;
+}

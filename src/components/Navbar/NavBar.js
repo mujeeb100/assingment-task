@@ -20,7 +20,6 @@ function NavBar() {
       <Navbar bg="light" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#">
-            
             <div className="navbar_image ">
               <img src={logo} alt="" />
             </div>
@@ -51,25 +50,30 @@ function NavBar() {
             </Form>
           </Navbar.Collapse>
           <div>
-            <NavDropdown title="User Admin" id="basic-nav-dropdown">
-              {/* <NavDropdown.Item> */}
+            <div className="d-flex">
               <Image
-                className="thumbnail-image"
+                className="thumbnail-image "
                 src={Nrm_photo_icon_dummy}
                 alt=""
               />
-              {/* </NavDropdown.Item> */}
+              <NavDropdown title="User Admin" id="basic-nav-dropdown">
+                {/* <NavDropdown.Item> */}
 
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+                {/* </NavDropdown.Item> */}
+
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </div>
           </div>
         </Container>
       </Navbar>

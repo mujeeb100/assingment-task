@@ -1,100 +1,62 @@
-import { Container, makeStyles, Typography } from "@material-ui/core";
-import {
-  Bookmark,
-  List,
-  ExitToApp,
-  Home,
-  Person,
-  PhotoCamera,
-  PlayCircleOutline,
-  Settings,
-  Storefront,
-  TabletMac,
-} from "@material-ui/icons";
+import React from "react";
+import "./SideNavBar.css";
+import { MdDashboard, MdPayments } from "react-icons/md";
+import { BsFillBoxSeamFill, BsBoxes } from "react-icons/bs";
+import { IoMdPeople, IoIosInformationCircle } from "react-icons/io";
+import { FaHandshake } from "react-icons/fa";
+import { AiFillTrophy } from "react-icons/ai";
+import { Outlet, NavLink } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    height: "100vh",
-    color: "white",
-    paddingTop: theme.spacing(10),
-    backgroundColor: theme.palette.primary.main,
-    position: "sticky",
-    top: 0,
-    [theme.breakpoints.up("sm")]: {
-      backgroundColor: "white",
-      color: "#555",
-      border: "1px solid #ece7e7",
-    },
-  },
-  item: {
-    display: "flex",
-    alignItems: "center",
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.up("sm")]: {
-      marginBottom: theme.spacing(3),
-      cursor: "pointer",
-    },
-  },
-  icon: {
-    marginRight: theme.spacing(1),
-    [theme.breakpoints.up("sm")]: {
-      fontSize: "18px",
-    },
-  },
-  text: {
-    fontWeight: 500,
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
-  },
-}));
-
-const SideNavBar = () => {
-  const classes = useStyles();
+function SideNavBar() {
   return (
-    <Container className={classes.container}>
-      <div className={classes.item}>
-        <Home className={classes.icon} />
-        <Typography className={classes.text}>Homepage</Typography>
+    <div className="main_sidebar">
+      <div className="Sidebar">
+        {/* <Outlet></Outlet> */}
+        <div className="Dashboard ">
+          <MdDashboard />
+          &nbsp; DashBoard
+        </div>
+        <div className="Orders">
+          <BsFillBoxSeamFill />
+          &nbsp; Orders
+        </div>
+
+        <div className="Team_members">
+          {" "}
+          <IoMdPeople />
+          &nbsp; Team Members
+        </div>
+        <div className="Partners">
+          <FaHandshake />
+          &nbsp; Partners
+        </div>
+        <div className="Product_Listings">
+          <BsBoxes />
+          &nbsp; Product Listings
+        </div>
+        <div className="Award_hounours">
+          <AiFillTrophy />
+          &nbsp; Awards & Hounours
+        </div>
+        {/* about start */}
+        <NavLink
+          // className="About  active_nav"
+          className={({ isActive }) =>
+            isActive ? "About  active_nav" : "About"
+          }
+        >
+          <IoIosInformationCircle />
+          &nbsp; About
+        </NavLink>
+        {/* about end */}
+        <div className="Payment_info">
+          <MdPayments />
+          &nbsp; Payment info
+        </div>
       </div>
-      <div className={classes.item}>
-        <Person className={classes.icon} />
-        <Typography className={classes.text}>Friends</Typography>
-      </div>
-      <div className={classes.item}>
-        <List className={classes.icon} />
-        <Typography className={classes.text}>Lists</Typography>
-      </div>
-      <div className={classes.item}>
-        <PhotoCamera className={classes.icon} />
-        <Typography className={classes.text}>Camera</Typography>
-      </div>
-      <div className={classes.item}>
-        <PlayCircleOutline className={classes.icon} />
-        <Typography className={classes.text}>Videos</Typography>
-      </div>
-      <div className={classes.item}>
-        <TabletMac className={classes.icon} />
-        <Typography className={classes.text}>Apps</Typography>
-      </div>
-      <div className={classes.item}>
-        <Bookmark className={classes.icon} />
-        <Typography className={classes.text}>Collections</Typography>
-      </div>
-      <div className={classes.item}>
-        <Storefront className={classes.icon} />
-        <Typography className={classes.text}>Market Place</Typography>
-      </div>
-      <div className={classes.item}>
-        <Settings className={classes.icon} />
-        <Typography className={classes.text}>Settings</Typography>
-      </div>
-      <div className={classes.item}>
-        <ExitToApp className={classes.icon} />
-        <Typography className={classes.text}>Logout</Typography>
-      </div>
-    </Container>
+      <Outlet />
+    </div>
   );
-};
+}
 
 export default SideNavBar;
